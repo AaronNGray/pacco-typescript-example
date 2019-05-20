@@ -1,0 +1,25 @@
+{
+  "files": {
+    "README.md": [
+      ["test/([^/]+?)/test.min.js", "test/[version]/test.min.js"],
+      ["@([^/]+?)/dist/test.min.js", "@[version]/dist/test.min.js"]
+    ]
+  },
+  "tag": {
+    "enabled": false,
+    "name": "[version]"
+  },
+  "release": {
+    "github": {
+      "enabled": true,
+      "files": [
+        "dist/**"
+      ]
+    }
+  },
+  "scripts": {
+    "prebump": "npm run prepublishOnly",
+    "prerelease": "npm run prepublishOnly",
+    "postrelease": "npm publish"
+  }
+}
